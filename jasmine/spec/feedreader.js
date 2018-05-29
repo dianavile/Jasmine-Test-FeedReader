@@ -21,7 +21,7 @@ $(function() {
          * allFeeds in app.js to be an empty array and refresh the
          * page?
          */
-         it('are defined', function() {
+        it('are defined', function() {
             expect(allFeeds).toBeDefined();
             expect(allFeeds.length).not.toBe(0);
         });
@@ -32,7 +32,7 @@ $(function() {
          * and that the URL is not empty.
          */
 
-         it('has an URL defined and not empty', function() {
+        it('has an URL defined and not empty', function() {
            for(feed of allFeeds) {
             expect(feed.url).toBeDefined();
             expect(allFeeds.url).not.toBe('');
@@ -41,7 +41,7 @@ $(function() {
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
-         it('has an name defined and not empty', function() {
+        it('has an name defined and not empty', function() {
            for(feed of allFeeds) {
             expect(feed.name).toBeDefined();
             expect(allFeeds.name).not.toBe('');
@@ -53,13 +53,15 @@ $(function() {
             
             let body = document.getElementsByTagName('body')[0];     
            
-        /* TODO: Write a test that ensures the menu element is
+        /* Write a test that ensures the menu element is
          * hidden by default. You'll have to analyze the HTML and
          * the CSS to determine how we're performing the
          * hiding/showing of the menu element.
          */
-
-         /* TODO: Write a test that ensures the menu changes
+        it('is hidden by default', function() {
+            expect(body.classList.value).toBe('menu-hidden');
+        });
+         /* Write a test that ensures the menu changes
           * visibility when the menu icon is clicked. This test
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
