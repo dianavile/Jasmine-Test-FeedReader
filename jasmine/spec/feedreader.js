@@ -35,7 +35,7 @@ $(function() {
         it('has an URL defined and not empty', function() {
            for(feed of allFeeds) {
             expect(feed.url).toBeDefined();
-            expect(allFeeds.url).not.toBe('');
+            expect(feeds.url).not.toBe('');
         };
         /* Write a test that loops through each feed
          * in the allFeeds object and ensures it has a name defined
