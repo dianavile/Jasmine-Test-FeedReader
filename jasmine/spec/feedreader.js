@@ -59,7 +59,7 @@ $(function() {
          * hiding/showing of the menu element.
          */
         it('is hidden by default', function() {
-            expect(body.classList.value).toBe('menu-hidden');
+            expect(body.classList.contains('menu-hidden')).toBe(true);
         });
          /* Write a test that ensures the menu changes
           * visibility when the menu icon is clicked. This test
@@ -70,10 +70,10 @@ $(function() {
             let menuIcon = document.getElementsByClassName('menu-icon-link')[0];
 
             menuIcon.click();
-            expect(body.classList.value).toBe('');
+            expect(body.classList.contains('menu-hidden')).toBe(false);
 
             menuIcon.click();
-            expect(body.classList.value).toBe('menu-hidden');
+            expect(body.classList.contains('menu-hidden')).toBe(true);
         });    
     });
     /* Write a new test suite named "Initial Entries" */
