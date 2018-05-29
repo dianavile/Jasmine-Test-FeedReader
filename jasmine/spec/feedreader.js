@@ -91,8 +91,9 @@ $(function() {
          */          
           it('are loaded within the .feed container', function() {
 
-            let feeds = document.getElementsByClassName('entry').length;
-            expect(feeds).not.toBe(0);
+            let feedContainer = document.getElementsByClassName('feed')[0];
+            let feedEntries = feedContainer.children;
+            expect(feedEntries.length).not.toBe(0); 
         });
     });
     /* Write a new test suite named "New Feed Selection" */
