@@ -121,4 +121,5 @@ $(function() {
             expect(newFeeds).not.toEqual(oldFeeds);
         });
    });        
-});}
+});
+    }           
