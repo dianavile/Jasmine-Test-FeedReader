@@ -44,7 +44,7 @@ $(function() {
         it('has an name defined and not empty', function() {
            for(feed of allFeeds) {
             expect(feed.name).toBeDefined();
-            expect(allFeeds.name).not.toBe('');
+            expect(feed.name).not.toBe('');
         };    
     });
 
