@@ -26,8 +26,9 @@ $(function() {
         it('has an URL defined and not empty', function() {
            for(feed of allFeeds) {
                 expect(feed.url).toBeDefined();
-                expect(feeds.url).not.toBe('');
+                expect(feed.url).not.toBe('');
         };
+    });
 
         /* Test 3: Test to loop through allFeed array's object "feed" 
          * to check if it has a name defined and name is not empty.
@@ -36,16 +37,6 @@ $(function() {
            for(feed of allFeeds) {
                 expect(feed.name).toBeDefined();
                 expect(feed.name).not.toBe('');
-        };    
-    });
-
-        /* Test 4: Test to loop through allFeed array's object "feed" 
-         * to check if the name property is defined and not empty.
-         */
-        it('as name defined and not empty', function() {
-            for(feed of allFeeds) {
-                 expect(feed.name).toBeDefined();
-                 expect(feed.name).not.toBe('');
             };
         });
     });
@@ -111,9 +102,9 @@ $(function() {
             loadFeed(0, function() { // Load first new feeds set
 
                 oldFeeds = document.getElementsByClassName('feed')[0].innerHTML;
-            loadFeed(1, function() { // Load second new feeds set
+                loadFeed(1, function() { // Load second new feeds set
 
-                newFeeds = document.getElementsByClassName('feed')[0].innerHTML;
+                    newFeeds = document.getElementsByClassName('feed')[0].innerHTML;
                     done();
                 });
             });
