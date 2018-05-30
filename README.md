@@ -1,48 +1,91 @@
-# Project Overview
+# Jasmine-Test-FeedReader
+- Build testing suites with Jasmine to check main functionalities of a FeedReader step-by-step (Project 5).
+- Created for the Udacity __Front End Web Developer Nanodegree (Full Google Scholarship)__.
 
-In this project you are given a web-based application that reads RSS feeds. The original developer of this application clearly saw the value in testing, they've already included [Jasmine](http://jasmine.github.io/) and even started writing their first test suite! Unfortunately, they decided to move on to start their own company and we're now left with an application with an incomplete test suite. That's where you come in.
+## Table of Contents:
+* [Instructions](#instructions)
+* [Installation](#installation)
+* [Mockup](#mockup)
+* [FeedReader Functionality](#functionality)
+* [Requirements](#requirements)
+* [Code Dependencies](#dependencies)
+* [Contribution](#contribution)
+* [Licence](#licence)
+* [Acknowledgements](#acknowledgements)
 
+## Instructions:
+- Students are given the `RSS feedreader as Udacity startercode`,features included.
+- __Goal__ is to __test the RSS feedreader with Jasmine "test-driven development"__ by modifying the Feedreader.js file. Testing is an important part of the development process, to make sure future feature development doesn't break existing features.
 
-## Why this Project?
+- The Feedreader consists of the following:
+- 1) You can select 4 different feed sources in a menu. 
+- 2) Each time a new source is selected, a new news feed is loaded.
+- 2) hidden menu (by default).
+- 3) The menu displays when click on menu icon with CSS/HTML class.
 
-Testing is an important part of the development process and many organizations practice a standard of development known as "test-driven development". This is when developers write tests first, before they ever start developing their application. All the tests initially fail and then they start writing application code to make these tests pass.
+## Installation:
+- __Clone__ this repository or __download__ it as a .zip file.
+- Open the `index.html` file in the browser, to open the RSS reader.
+- Check the test results on the page bottom.
 
-Whether you work in an organization that uses test-driven development or in an organization that uses tests to make sure future feature development doesn't break existing features, it's an important skill to have!
+## Mockup:
+See [Jasmine FeedReader Test results](https://dianavile.github.io/Jasmine-Test-FeedReader/#).
 
+## FeedReader Functionality: (Test suites and tests)
+I have created 4 different __test suites__, with 8 separated Jasmine tests:
+- 1: `RSS feeds` definition
+- 2: `Menu` behaviour
+- 3: `Initial Entries` loaded on the page
+- 4: `New Feed selection` load asynchronously, once another source is selected. 
 
-## What will I learn?
+- 1) Testsuite 1 __`RSS Feeds`__checks, if:
+- RSS sources `are defined`, 
+- RSS `contain a valid URL`, 
+- RSS have `a valid name` (not be empty or undefined)
 
-You will learn how to use Jasmine to write a number of tests against a pre-existing application. These will test the underlying business logic of the application as well as the event handling and DOM manipulation.
+- 2) Testsuite 2 __`The menu`__checks, if:
+- The Menu `is hidden by default` 
+- The Menu `change visibility if icon is clicked`. 
+- The Menu is hidden, if the body has the 'menu-hidden' class.  
+- The Menu displays if click on menu icon.
+- Body's class is available at page load
+- Body class is hidden en displayed if the icon is clicked.
 
+- 3) Testsuite 3 __`Initial Entries`__ checks, if:
+- First feed collection (`allFeeds`array) loads within feed container (in HTML). 
+- Test starts _AFTER_ this content feed is loaded. 
+- The `loadFeed` function is asynchronously called by the `beforeEach` function.
+- Test store the feed elements in an array.
+- Array elements need to contain at least 1 array element (>0).
 
-## How will this help my career?
+- 4)Testsuite 3 __`New Feed Selection`__ checks, if: 
+- The `newFeed` contents a user selects, loads within feed container (in HTML) to replace the `oldFeed`. 
+- The content is asynchronously called by the `beforeEach` function to load correctly.
+- Both `newFeed` and `oldFeed` contents are stored in a variable.
+- Both variables are compared. If their content differ, the HTML content(= Feeds) will be different as well.
 
-* Writing effective tests requires analyzing multiple aspects of an application including the HTML, CSS and JavaScript - an extremely important skill when changing teams or joining a new company.
-* Good tests give you the ability to quickly analyze whether new code breaks an existing feature within your codebase, without having to manually test all of the functionality.
+## Requirements:
+The FeedReader testing need to fullfill the following code criteria [Project Rubric Link](https://review.udacity.com/#!/rubrics/18/view).
 
+## Code Dependencies:
+- This project is created based on the `Udacity starterscode` from the original [Udacity's Project](https://github.com/udacity/frontend-nanodegree-feedreader).
 
-# How will I complete this project?
+__Starterscode included:__
+- [jQuery](https://jquery.com/)
+- [Google Roboto Font](https://fonts.google.com/specimen/Roboto)
+- [Icomoon](https://icomoon.io/)
+- [Google's JavaScript Loader API](https://www.google.com/jsapi)
+- [Handlebars](https://handlebarsjs.com/)
 
-Review the Feed Reader Testing [Project Rubric](https://review.udacity.com/#!/projects/3442558598/rubric)
+I used the following __Javascript Code resources:__
+- [Jasmine](https://jasmine.github.io/)
+- [VanillaJS](http://vanilla-js.com/)
 
-1. Take the JavaScript Testing [course](https://www.udacity.com/course/ud549)
-2. Download the [required project assets](http://github.com/udacity/frontend-nanodegree-feedreader).
-3. Review the functionality of the application within your browser.
-4. Explore the application's HTML (**./index.html**), CSS (**./css/style.css**) and JavaScript (**./js/app.js**) to gain an understanding of how it works.
-5. Explore the Jasmine spec file in **./jasmine/spec/feedreader.js** and review the [Jasmine documentation](http://jasmine.github.io).
-6. Edit the `allFeeds` variable in **./js/app.js** to make the provided test fail and see how Jasmine visualizes this failure in your application.
-7. Return the `allFeeds` variable to a passing state.
-8. Write a test that loops through each feed in the `allFeeds` object and ensures it has a URL defined and that the URL is not empty.
-9. Write a test that loops through each feed in the `allFeeds` object and ensures it has a name defined and that the name is not empty.
-10. Write a new test suite named `"The menu"`.
-11. Write a test that ensures the menu element is hidden by default. You'll have to analyze the HTML and the CSS to determine how we're performing the hiding/showing of the menu element.
-12. Write a test that ensures the menu changes visibility when the menu icon is clicked. This test should have two expectations: does the menu display when clicked and does it hide when clicked again.
-13. Write a test suite named `"Initial Entries"`.
-14. Write a test that ensures when the `loadFeed` function is called and completes its work, there is at least a single `.entry` element within the `.feed` container.
-15. Write a test suite named `"New Feed Selection"`.
-16. Write a test that ensures when a new feed is loaded by the `loadFeed` function that the content actually changes.
-17. No test should be dependent on the results of another.
-18. Callbacks should be used to ensure that feeds are loaded before they are tested.
-19. Implement error handling for undefined variables and out-of-bound array access.
-20. When complete - all of your tests should pass. 
-21. Write a README file detailing all steps required to successfully run the application. If you have added additional tests (for Udacious Test Coverage),  provide documentation for what these future features are and what the tests are checking for.
+## Contribution:
+No pull requests are accepted.
+
+## License:
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Acknowledgements:
+* Thanks to Udacity, fellow scholarships & coding friends. 
