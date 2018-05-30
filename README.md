@@ -30,6 +30,7 @@
 
 ## Mockup:
 See [Jasmine FeedReader Test results](https://dianavile.github.io/Jasmine-Test-FeedReader/#).
+![TestScreen](https://github.com/dianavile/Jasmine-Test-FeedReader/blob/master/Jasmine_TestScreen.png)
 
 ## FeedReader Functionality: (Test suites and tests)
 I have created 4 different __test suites__, with 8 separated Jasmine tests:
