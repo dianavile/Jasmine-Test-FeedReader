@@ -15,8 +15,7 @@
 
 ## Instructions:
 - Students are given the `RSS feedreader as Udacity startercode`,features included.
-- __Goal__ is to __test the RSS feedreader with Jasmine "test-driven development"__ by modifying the Feedreader.js file. Testing is an important part of the development process, to make sure future feature development doesn't break existing features.
-
+- __Goal__ is to __test the RSS feedreader with Jasmine "test-driven development"__ by modifying the Feedreader.js file. 
 - The Feedreader consists of the following:
 1) You can select 4 different feed sources in a menu. 
 2) Each time a new source is selected, a new news feed is loaded.
