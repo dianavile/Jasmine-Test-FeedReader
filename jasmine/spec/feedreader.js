@@ -50,7 +50,7 @@ $(function() {
          * This test checks if menu is present in <body> by default to hide menu.
          */
         it('is hidden by default', function() {
-            expect(body.hasClass('menu-hidden')).toBe(true);
+            expect(body.classList.contains('menu-hidden')).toBe(true);
         }); 
     /* Test 5: Test to check if menu changes visibility, when menu icon is clicked. 
          * Includes two expectations: menu displays when menu icon is clicked
@@ -60,10 +60,10 @@ $(function() {
             let menuIcon = document.getElementsByClassName('menu-icon-link')[0];
 
             menuIcon.click();
-            expect(body.hasClass('menu-hidden')).toBe(false);
+            expect(body.classList.contains('menu-hidden')).toBe(false);
 
             menuIcon.click();
-            expect(body.hasClass('menu-hidden')).toBe(true);
+            expect(body.classList.contains('menu-hidden')).toBe(true);
         });    
     });
 
