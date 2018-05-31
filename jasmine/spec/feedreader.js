@@ -26,7 +26,7 @@ $(function() {
         it('has an URL defined and not empty', function() {
            for(feed of allFeeds) {
                 expect(feed.url).toBeDefined();
-                expect(feed.url).not.toBe('');
+                expect(feed.url.length).not.toBe(0);              
         };
     });
 
@@ -36,7 +36,7 @@ $(function() {
         it('has an name defined and not empty', function() {
            for(feed of allFeeds) {
                 expect(feed.name).toBeDefined();
-                expect(feed.name).not.toBe('');
+                expect(feed.name.length).not.toBe(0);
             };
         });
     });
