@@ -45,7 +45,7 @@ $(function() {
     describe('The menu', function() {
         let body = document.getElementsByTagName('body')[0];
     
-    /* Test 5: Test to check if menu element is hidden by default.
+    /* Test 4: Test to check if menu element is hidden by default.
          * The menu visibility is determined by <body> 'menu-hidden' class. 
          * This test checks if menu is present in <body> by default to hide menu.
          */
@@ -53,7 +53,7 @@ $(function() {
             expect(body.classList.contains('menu-hidden')).toBe(true);
         }); 
 
-    /* Test 6: Test to check if menu changes visibility, when menu icon is clicked. 
+    /* Test 5: Test to check if menu changes visibility, when menu icon is clicked. 
          * Includes two expectations: menu displays when menu icon is clicked
          * and menu hide when menu icon is clicked again.
          */
@@ -73,7 +73,7 @@ $(function() {
      */
     describe('Initial Entries', function() {
 
-    /* Test 7: Write a test to ensure after loadFeed function is called
+    /* Test 6: Write a test to ensure after loadFeed function is called
      * and completed, at least one .entry element within .feed container displays.
      * IMPORTANT: loadFeed() is asynchronous. So, this test requires
      * the use of Jasmine's beforeEach and asynchronous done() function.
@@ -91,7 +91,7 @@ $(function() {
 
     /* Test suite 4: Test suite for "New Feed Selection" 
      * to check if page refreshes when new feed set is selected
-     * Store HTML content in "oldFeeds" variable
+     * Test 7: Store HTML content in "oldFeeds" variable and
      * Store HTML content of new feed in "newFeeds" variable
      */
     describe('New Feed Selection', function() {      
